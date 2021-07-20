@@ -358,6 +358,11 @@ output "igw_arn" {
   value       = concat(aws_internet_gateway.this.*.arn, [""])[0]
 }
 
+output "igw_route" {
+  value = aws_route.public_internet_gateway
+}
+
+
 output "egress_only_internet_gateway_id" {
   description = "The ID of the egress only Internet Gateway"
   value       = concat(aws_egress_only_internet_gateway.this.*.id, [""])[0]
